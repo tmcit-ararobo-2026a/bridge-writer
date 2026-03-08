@@ -1,0 +1,5 @@
+@startuml Bridge_Writer-System
+
+a -> b
+
+@enduml

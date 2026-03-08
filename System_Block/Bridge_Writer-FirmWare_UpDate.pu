@@ -1,0 +1,15 @@
+@startuml Bridge_Writer-FirmWare_UpDate
+
+BW_UpDate_FirmWare -> MCU_Board : 1.Stop Connecting
+MCU_Board -> Other_Board : 1.1.Stop Connecting
+BW_UpDate_FirmWare -> MCU_Board : 2.UpDate Board Request
+MCU_Board -> Other_Board : 2.1.UpDate Board Request
+BW_UpDate_FirmWare -> MCU_Board : 3.UpDate Board ID
+MCU_Board -> Other_Board : 3.1.UpDate Board ID
+Other_Board -> MCU_Board : 4.1,Allow The UpDate
+MCU_Board -> BW_UpDate_FirmWare : 4.Allow The UpDate
+BW_UpDate_FirmWare -> MCU_Board : 5.Start FrimWare UpDate
+MCU_Board -> Other_Board : 5.1.Start FrimWare UpDate
+
+
+@enduml
