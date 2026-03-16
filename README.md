@@ -1,5 +1,5 @@
 # BridgeWriter
-| Supports Ethernet / Wi‑Fi4 / USB / CAN. | - | Ethernet / Wi‑Fi4 / USB / CAN 対応。|
+| Supports Ethernet / Wi‑Fi6 / USB / CAN. | - | Ethernet / Wi‑Fi6 / USB / CAN 対応。|
 
 
 Ethernet / Wi‑Fi6 / USB / CAN 対応。
