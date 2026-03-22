@@ -16047,6 +16047,12 @@
 		(uuid "b22d3f68-2d88-4de2-97eb-6b25839dfb43")
 	)
 	(junction
+		(at 527.05 288.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4fadea1-8991-4e16-b591-ffc5aff3a154")
+	)
+	(junction
 		(at 668.02 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20340,6 +20346,16 @@
 	)
 	(wire
 		(pts
+			(xy 530.86 309.88) (xy 527.05 309.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8724cb28-5464-4263-99eb-c66215fbab18")
+	)
+	(wire
+		(pts
 			(xy 509.27 106.68) (xy 509.27 105.41)
 		)
 		(stroke
@@ -20797,6 +20813,16 @@
 			(type default)
 		)
 		(uuid "98a414ad-98be-4491-a7d4-42ed0e635d4a")
+	)
+	(wire
+		(pts
+			(xy 530.86 288.29) (xy 527.05 288.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99284dcc-c198-4c88-b73c-1f2e5bdc74c4")
 	)
 	(wire
 		(pts
@@ -21260,6 +21286,16 @@
 	)
 	(wire
 		(pts
+			(xy 530.86 294.64) (xy 530.86 309.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8efacf4-a4a4-49a9-bc22-eab482200dc7")
+	)
+	(wire
+		(pts
 			(xy 574.04 511.81) (xy 574.04 513.08)
 		)
 		(stroke
@@ -21307,6 +21343,16 @@
 			(type default)
 		)
 		(uuid "a9cccc20-3409-4b50-b71d-1a45a92eee33")
+	)
+	(wire
+		(pts
+			(xy 527.05 289.56) (xy 527.05 288.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9f46f99-fad9-4ebc-a50f-4411cfa39fe6")
 	)
 	(wire
 		(pts
@@ -21717,6 +21763,16 @@
 			(type default)
 		)
 		(uuid "ba3dccb0-ba60-4f1b-8b8a-d0165161a523")
+	)
+	(wire
+		(pts
+			(xy 530.86 288.29) (xy 530.86 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "baeacd33-5add-4c8a-af5a-c2e623ee23b1")
 	)
 	(wire
 		(pts
@@ -36433,7 +36489,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 527.05 289.56 0)
+		(at 527.05 288.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -36442,7 +36498,7 @@
 		(fields_autoplaced yes)
 		(uuid "3a0f3b89-22cf-4f28-8bf4-ccd9f8647153")
 		(property "Reference" "#PWR083"
-			(at 527.05 293.37 0)
+			(at 527.05 292.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36451,7 +36507,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 527.05 284.48 0)
+			(at 527.05 283.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36459,7 +36515,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 527.05 289.56 0)
+			(at 527.05 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36468,7 +36524,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 527.05 289.56 0)
+			(at 527.05 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36477,7 +36533,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 527.05 289.56 0)
+			(at 527.05 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38816,7 +38872,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 29.21 295.91 0)
+		(at 60.96 295.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38825,7 +38881,7 @@
 		(fields_autoplaced yes)
 		(uuid "5190addd-afe7-4f88-826f-8aa9e246a100")
 		(property "Reference" "SW4"
-			(at 29.21 288.29 0)
+			(at 60.96 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38833,7 +38889,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 29.21 290.83 0)
+			(at 60.96 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38841,7 +38897,7 @@
 			)
 		)
 		(property "Footprint" "0Ikedalibrary:switch_TVAF06-A020B-R"
-			(at 29.21 290.83 0)
+			(at 60.96 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38850,7 +38906,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 29.21 290.83 0)
+			(at 60.96 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38859,7 +38915,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38868,7 +38924,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38877,7 +38933,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38886,7 +38942,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38895,7 +38951,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38904,7 +38960,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 29.21 295.91 0)
+			(at 60.96 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51052,7 +51108,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 60.96 295.91 0)
+		(at 29.21 295.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -51061,7 +51117,7 @@
 		(fields_autoplaced yes)
 		(uuid "a8224813-239a-4bf1-9355-c3b97dfaf0a8")
 		(property "Reference" "SW3"
-			(at 60.96 288.29 0)
+			(at 29.21 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51069,7 +51125,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 60.96 290.83 0)
+			(at 29.21 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51077,7 +51133,7 @@
 			)
 		)
 		(property "Footprint" "0Ikedalibrary:switch_TVAF06-A020B-R"
-			(at 60.96 290.83 0)
+			(at 29.21 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51086,7 +51142,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 290.83 0)
+			(at 29.21 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51095,7 +51151,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51104,7 +51160,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51113,7 +51169,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51122,7 +51178,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51131,7 +51187,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51140,7 +51196,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 60.96 295.91 0)
+			(at 29.21 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53458,6 +53514,121 @@
 			(project "BridgeWriter_v1"
 				(path "/3b4bfd7b-9fe3-4dd9-a80a-2bcbede820df"
 					(reference "#PWR0127")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 530.86 292.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9f0b7b0-8d08-4633-a785-80d3ff59c71e")
+		(property "Reference" "C71"
+			(at 533.4 290.8362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 533.4 293.3762 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 530.86 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be2d3a7c-85ff-4591-8c47-6d69202a8c5b")
+		)
+		(pin "2"
+			(uuid "6b8b152b-136c-4858-886c-ae72276d52c9")
+		)
+		(instances
+			(project "BridgeWriter_v1"
+				(path "/3b4bfd7b-9fe3-4dd9-a80a-2bcbede820df"
+					(reference "C71")
 					(unit 1)
 				)
 			)
