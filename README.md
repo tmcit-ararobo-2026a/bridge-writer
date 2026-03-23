@@ -1,11 +1,45 @@
-# BridgeWriter
-| Supports Ethernet / Wi‑Fi6 / USB / CAN. | - | Ethernet / Wi‑Fi6 / USB / CAN 対応。|
+# <bridge-writer>
+
+<!-- 一行でプロジェクトを説明する -->
+<can経由で他基板へと書き込める通信基板と基板のコード>
+
+## 目次
+
+1. [概要](#1-概要)
+2. [ドキュメント](#2-ドキュメント)
+3. [コントリビューション](#3-コントリビューション)
+4. [ビルド・使い方](#4-ビルド使い方)
+5. [システム構成](#5-システム構成)
+6. [ライセンス](#6-ライセンス)
+
+## 1. 概要
 
 
-Ethernet / Wi‑Fi6 / USB / CAN 対応。
-外部から基板へ書き込み可能で、CAN経由で他基板へ中継書き込みも行える書込ハブ。
-対応MCUと電源要件は docs に記載。
 
-Supports Ethernet / Wi‑Fi6 / USB / CAN. 
-Writes firmware to the board from multiple interfaces and can relay writes to other CAN‑connected boards. 
-See docs/ for supported MCUs and power requirements.
+<!-- プロジェクトの目的・背景・解決する課題を記述 -->
+
+## 2. ドキュメント
+
+| ドキュメント | 説明 |
+| :-: | :-: |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | 開発フロー・コミット規約・コーディング規約 |
+| [docs/coding-rules.md](./docs/coding-rules.md) | コーディング規約の詳細 |
+| [docs/uml/](./docs/uml/) | UML図 |
+
+## 3. コントリビューション
+
+[CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
+
+## 4. ビルド・使い方
+
+<!-- ビルドのやり方 -->
+<!-- 使い方 -->
+
+## 5. システム構成
+
+<!-- ROS2ノード構成・STM32との通信方式・ハードウェア構成 等 -->
+<!-- 依存クラスが3つ以上ある場合は docs/uml/ にUML図を作成し、ここにリンクする -->
+
+## 6. ライセンス
+
+本リポジトリは [MITライセンス](./LICENSE) のもとで公開されています。
