@@ -23885,7 +23885,7 @@
 	)
 	(global_label "FW_UART_TXF"
 		(shape input)
-		(at 67.31 537.21 0)
+		(at 67.31 549.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23895,7 +23895,7 @@
 		)
 		(uuid "045b5ca3-6be1-47b2-b769-6a6f9bab18b1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 82.6928 537.21 0)
+			(at 82.6928 549.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24259,22 +24259,22 @@
 	)
 	(global_label "SDMMC_WRITE"
 		(shape input)
-		(at 133.35 194.31 180)
+		(at 194.31 173.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "166c8768-7977-4b22-a9f9-3b0f925a2bca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 117.3021 194.31 0)
+			(at 210.3579 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -24853,7 +24853,7 @@
 	)
 	(global_label "Wi-Fi_TX"
 		(shape input)
-		(at 67.31 532.13 0)
+		(at 67.31 537.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24863,7 +24863,7 @@
 		)
 		(uuid "32061323-967d-4a31-b910-c061aa9751fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 78.7619 532.13 0)
+			(at 78.7619 537.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24919,7 +24919,7 @@
 	)
 	(global_label "Wi-Fi_RX"
 		(shape input)
-		(at 67.31 529.59 0)
+		(at 67.31 534.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24929,7 +24929,7 @@
 		)
 		(uuid "342ab3d3-2ff8-44a9-a3ff-2c331fe5dec5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 79.0643 529.59 0)
+			(at 79.0643 534.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24985,22 +24985,22 @@
 	)
 	(global_label "FW_UART_TX"
 		(shape input)
-		(at 91.44 233.68 0)
+		(at 133.35 194.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "3db9334d-a8d1-4083-90cd-bd15561b8156")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.0366 233.68 0)
+			(at 118.7534 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -25073,7 +25073,7 @@
 	)
 	(global_label "FAN_INA_ESP"
 		(shape input)
-		(at 67.31 547.37 0)
+		(at 67.31 532.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25083,7 +25083,7 @@
 		)
 		(uuid "41b143f5-3c96-4171-b4c8-fd3320571b27")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 82.3905 547.37 0)
+			(at 82.3905 532.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25227,22 +25227,22 @@
 	)
 	(global_label "FW_UART_RX"
 		(shape input)
-		(at 91.44 236.22 0)
+		(at 133.35 196.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "4a09c2b9-0ffd-4eba-8389-d8c6b35dccb4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.7342 236.22 0)
+			(at 119.0558 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -25425,7 +25425,7 @@
 	)
 	(global_label "FAN_INB_ESP"
 		(shape input)
-		(at 67.31 549.91 0)
+		(at 67.31 529.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25435,7 +25435,7 @@
 		)
 		(uuid "522fbc30-b9ff-464d-b1fc-821cf4cb1966")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 82.5719 549.91 0)
+			(at 82.5719 529.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25689,7 +25689,7 @@
 	)
 	(global_label "FW_UART_RXF"
 		(shape input)
-		(at 67.31 534.67 0)
+		(at 67.31 547.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25699,7 +25699,7 @@
 		)
 		(uuid "5a7062c3-416f-428d-871d-2099083f223c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 82.9952 534.67 0)
+			(at 82.9952 547.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25799,7 +25799,7 @@
 	)
 	(global_label "FW_UART_TX"
 		(shape input)
-		(at 67.31 511.81 0)
+		(at 67.31 514.35 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25809,7 +25809,7 @@
 		)
 		(uuid "5c712cab-c83a-4082-b33d-812828132c53")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.6042 511.81 0)
+			(at 81.9066 514.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26195,22 +26195,22 @@
 	)
 	(global_label "FW_UART_RXF"
 		(shape input)
-		(at 91.44 241.3 0)
+		(at 133.35 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "732709f8-3c3f-463b-bac9-479e37b2e152")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.8228 241.3 0)
+			(at 117.9672 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -27713,22 +27713,22 @@
 	)
 	(global_label "SDMMC_READ"
 		(shape input)
-		(at 133.35 196.85 180)
+		(at 194.31 176.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "bdc9aa45-c8ce-4e9f-a3e1-47f6227ee516")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 117.9673 196.85 0)
+			(at 209.6927 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -28197,7 +28197,7 @@
 	)
 	(global_label "FW_UART_RX"
 		(shape input)
-		(at 67.31 514.35 0)
+		(at 67.31 511.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -28207,7 +28207,7 @@
 		)
 		(uuid "d720fa67-64fd-47af-945a-0e0c2a554f2c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.9066 514.35 0)
+			(at 81.6042 511.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28219,22 +28219,22 @@
 	)
 	(global_label "FW_UART_TXF"
 		(shape input)
-		(at 91.44 238.76 0)
+		(at 133.35 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "d774340e-fb7e-480e-abbf-5b42d5e3027d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 107.1252 238.76 0)
+			(at 117.6648 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
