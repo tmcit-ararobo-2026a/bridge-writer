@@ -4,28 +4,78 @@
 
 class mFDCAN_template_Class{
     public:
-        typedef bool function_return_template;
+        enum class fdcan_ports : uint8_t{
+            FDCAN1_Port,
+            FDCAN3_Port,
+            FDCAN2_Port,
+        };
         /**
-         * function_return_template
-         * Variable Type boolean
-         * 1 = COMPLETE
-         * 0 = ERROR
+         * ユーザー指定のport
+         * 使い方はhfdcan3をport1と指定して読みやすくする
+         * typedefは下のfdcan_setting_Handler_TypeDefを使う
          */
 
-        typedef bool error_flag;
+        enum class can_frame_type : uint8_t{
+            classic_can,
+            fdcan,
+        };
         /**
-         * error_flag
-         * Variable Type boolean
-         * 1 = Error
-         * 0 = No Error
+         * classic canと fdcanを選べる
+         * どちらを使うかは.iocファイルになんて設定してあるかを参照
          */
+
+        enum class bit_rate_type : uint8_t{
+            _1Mbps_,
+            _2Mbps_,
+            _3Mbps_,
+            _4Mbps_,
+            _5Mbps_,
+        };
+
+        enum class Fifo_num_type : uint8_t{
+            FIFO0,
+            FIFO1,
+        };
+
+        typedef struct{
+            FDCAN_HandleTypeDef *hfdcanx;   //hfdcan
+            fdcan_ports hfdcan_port;        //user port
+            can_frame_type hfdcan_frame;         //can frame
+            uint16_t TxCycle;               // ms : send cycle
+            uint16_t RxTimeOutCycle;        // ms : timeout
+            struct{
+                bool Fifo0;                 // 1:Enable | 0:Disable
+                bool Fifo1;                 // 1:Enable | 0:Disable
+                bool Tx_Event;              // 1:Enable | 0:Disable
+                bool Tx_Fifo_Empty;         // 1:Enable | 0:Disable
+            }CallBack;
+            uint16_t timeout_counter;       // 0:Disable | 1 = 0xFFFF enable value ms
+            bit_rate_type bit_rate;         /*通信速度*/
+            Fifo_num_type fifo_num;         /*使うfifo基本fifo0かfifo1*/
+        }fdcan_setting_Handler_TypeDef;
+        /**
+         * hfdcanxにhfdcanを入れる
+         * hfdcan_portにfdcan_portsの値を入れる
+         * hfdcan_frameにFDCANかClassic CANなのかを入れる
+         * TxCycleは何秒毎に送信するか値はms
+         * RxTimeOutCycleは受信の際前回の受信から何秒たったらtimeoutにするかの値
+         */
+
 
         typedef struct{
             struct{
-                error_flag Config;
-                error_flag Start;
-                error_flag Active_RxCallBack;
-                error_flag Active_TxCallBack;
+                bool Config;
+                bool Start;
+                bool Active_RxCallBack_Fifo0;
+                bool Active_RxCallBack_Fifo1;
+                bool Active_TxCallBack;
+                bool Active_TxFifoEmpty_CallBack;
+                bool Active_TimeOut_CallBack;
+                bool Deactive_RxCallBack_Fifo0;
+                bool Deactive_RxCallBack_Fifo1;
+                bool Deactive_TxCallBack;
+                bool Deactive_TxFifoEmpty_CallBack;
+                bool Deactive_TimeOut_CallBack;
             }Init;//In Init Function
             struct{
 
@@ -37,5 +87,10 @@ class mFDCAN_template_Class{
 
             }RxCallBack;//In RxCallBack Function
         }Error_Handler_TypeDef;
+        /**
+         * error_flag
+         * 1 = Error
+         * 0 = No Error
+         */
 };
 

@@ -5,15 +5,20 @@
 #ifdef STM32H7xx_HAL_FDCAN_H
 #include "stm32h7xx_hal_fdcan.h"
 #elif
-#include "fdcan.h
+#include "fdcan.h"
 #endif
 
 #include "mFDCAN_data_template.hpp"
 
 class mFDCAN_Class : mFDCAN_template_Class{
     public:
-        mFDCAN_template_Class::function_return_template Init();
-        mFDCAN_template_Class::function_return_template Send();
+        bool Init(fdcan_setting_Handler_TypeDef *set);
+        bool Send();
+        /**
+         * return value mean
+         * 1 = COMPLETE
+         * 0 = ERROR
+         */
 
         void TxCallback();
         void RxCallback();
@@ -22,6 +27,7 @@ class mFDCAN_Class : mFDCAN_template_Class{
         void Callback_Port2();
         void Callback_Port3();
 
+    Error_Handler_TypeDef Error;
 };
 
 extern mFDCAN_Class mFDCAN;
