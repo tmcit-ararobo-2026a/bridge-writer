@@ -12,8 +12,8 @@
 
 class mFDCAN_Class : mFDCAN_template_Class{
     public:
-        bool Init(fdcan_setting_Handler_TypeDef *set);
-        bool Send();
+        bool Init(fdcan_setting_Handle_TypeDef *set);
+        bool Send(fdcan_TxData_Handle_TypeDef *data);
         /**
          * return value mean
          * 1 = COMPLETE
@@ -27,7 +27,7 @@ class mFDCAN_Class : mFDCAN_template_Class{
         void Callback_Port2();
         void Callback_Port3();
 
-    Error_Handler_TypeDef Error;
+    fdcan_Error_Handle_TypeDef Error;
 };
 
 extern mFDCAN_Class mFDCAN;
