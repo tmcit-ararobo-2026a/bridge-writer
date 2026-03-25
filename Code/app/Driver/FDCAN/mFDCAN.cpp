@@ -2,7 +2,7 @@
 #include "mFDCAN.hpp"
 #include "mFDCAN_data_template.hpp"
 
-bool mFDCAN_Class::Init(fdcan_setting_Handler_TypeDef *set)
+bool mFDCAN_Class::Init(fdcan_setting_Handle_TypeDef *set)
 {
     FDCAN_FilterTypeDef FDCAN_filter;
     
@@ -136,6 +136,20 @@ bool mFDCAN_Class::Init(fdcan_setting_Handler_TypeDef *set)
 
 
     return 1;
+}
+
+bool mFDCAN_Class::Send(fdcan_TxData_Handle_TypeDef *data){
+    FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
+
+    FDCAN_TxHeader.Identifier = data->Id;
+    FDCAN_TxHeader.IdType = FDCAN_STANDARD_ID;
+    FDCAN_TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+    FDCAN_TxHeader.DataLength = dlc_table[data->Len];
+    FDCAN_TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+    FDCAN_TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+    FDCAN_TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+    FDCAN_TxHeader.TxEventFifoControl = FDCAN_STORE_TX_EVENTS;
+    FDCAN_TxHeader.MessageMarker = 0;
 }
 
 mFDCAN_Class mFDCAN;

@@ -12,7 +12,7 @@ class mFDCAN_template_Class{
         /**
          * ユーザー指定のport
          * 使い方はhfdcan3をport1と指定して読みやすくする
-         * typedefは下のfdcan_setting_Handler_TypeDefを使う
+         * typedefは下のfdcan_setting_Handle_TypeDefを使う
          */
 
         enum class can_frame_type : uint8_t{
@@ -52,7 +52,7 @@ class mFDCAN_template_Class{
             uint16_t timeout_counter;       // 0:Disable | 1 = 0xFFFF enable value ms
             bit_rate_type bit_rate;         /*通信速度*/
             Fifo_num_type fifo_num;         /*使うfifo基本fifo0かfifo1*/
-        }fdcan_setting_Handler_TypeDef;
+        }fdcan_setting_Handle_TypeDef;
         /**
          * hfdcanxにhfdcanを入れる
          * hfdcan_portにfdcan_portsの値を入れる
@@ -61,6 +61,12 @@ class mFDCAN_template_Class{
          * RxTimeOutCycleは受信の際前回の受信から何秒たったらtimeoutにするかの値
          */
 
+        typedef struct{
+            fdcan_ports FDCAN_Port;
+            uint32_t Id;
+            uint8_t Len;
+            uint8_t *data_p;
+        }fdcan_TxData_Handle_TypeDef;
 
         typedef struct{
             struct{
@@ -86,11 +92,35 @@ class mFDCAN_template_Class{
             struct{
 
             }RxCallBack;//In RxCallBack Function
-        }Error_Handler_TypeDef;
+        }fdcan_Error_Handle_TypeDef;
         /**
          * error_flag
          * 1 = Error
          * 0 = No Error
          */
+
+    protected:
+        static constexpr uint32_t dlc_table[16] = {
+            FDCAN_DLC_BYTES_0,
+            FDCAN_DLC_BYTES_1,
+            FDCAN_DLC_BYTES_2,
+            FDCAN_DLC_BYTES_3,
+            FDCAN_DLC_BYTES_4,
+            FDCAN_DLC_BYTES_5,
+            FDCAN_DLC_BYTES_6,
+            FDCAN_DLC_BYTES_7,
+            FDCAN_DLC_BYTES_8,
+            FDCAN_DLC_BYTES_12,
+            FDCAN_DLC_BYTES_16,
+            FDCAN_DLC_BYTES_20,
+            FDCAN_DLC_BYTES_24,
+            FDCAN_DLC_BYTES_32,
+            FDCAN_DLC_BYTES_48,
+            FDCAN_DLC_BYTES_64,
+        };
+
+        #define Data_len(len)   ((len >= 0) && (len <= 64)) ? (len <= 8 ? dlc_table[len] : (len <= 12 ? dlc_table[9] : \
+                                 (len <= 16 ? dlc_table[10] : (len <= 20 ? dlc_table[11] : (len <= 24 ? dlc_table[12] : \
+                                 (len <= 32 ? dlc_table[13] : (len <= 48 ? dlc_table[14] : dlc_table[15]))))))) : dlc_table[0]
 };
 
