@@ -15135,6 +15135,16 @@
 		)
 		(uuid "612cd6fb-0fff-46e0-8bde-80186ea3846a")
 	)
+	(text "←\n→"
+		(exclude_from_sim no)
+		(at 116.84 139.7 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "676b29c7-a835-47db-8154-2c5195852d20")
+	)
 	(text "5V DCDC"
 		(exclude_from_sim no)
 		(at 377.952 142.748 0)
@@ -16546,6 +16556,10 @@
 	(no_connect
 		(at 67.31 527.05)
 		(uuid "02d6d62a-61ad-48c2-8203-d3f25cfe97d4")
+	)
+	(no_connect
+		(at 133.35 199.39)
+		(uuid "1ae616e0-647f-457a-a099-1ae25267b3c0")
 	)
 	(no_connect
 		(at 67.31 519.43)
