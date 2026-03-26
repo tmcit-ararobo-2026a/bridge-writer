@@ -20,14 +20,23 @@ class mFDCAN_Class : mFDCAN_template_Class{
          * 0 = ERROR
          */
 
-        void TxCallback();
-        void RxCallback();
+        void TxCallback(fdcan_CallBack_Handle_TypeDef *data);
+        void RxCallback_Fifo0(fdcan_CallBack_Handle_TypeDef *data);
+        void RxCallback_Fifo1(fdcan_CallBack_Handle_TypeDef *data);
         
         void Callback_Port1();
         void Callback_Port2();
         void Callback_Port3();
 
+    fdcan_CallBack_Handle_TypeDef fdcan_TxCallBack;
+    fdcan_CallBack_Handle_TypeDef fdcan_RxCallBack_Fifo0;
+    fdcan_CallBack_Handle_TypeDef fdcan_RxCallBack_Fifo1;
+    bool Tx_Fifo_prohibited;
+
     fdcan_Error_Handle_TypeDef Error;
 };
 
 extern mFDCAN_Class mFDCAN;
+
+extern FDCAN_HandleTypeDef hfdcan1;
+extern FDCAN_HandleTypeDef hfdcan3;

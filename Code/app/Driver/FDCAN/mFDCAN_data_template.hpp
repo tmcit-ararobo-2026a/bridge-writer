@@ -40,18 +40,15 @@ class mFDCAN_template_Class{
         typedef struct{
             FDCAN_HandleTypeDef *hfdcanx;   //hfdcan
             fdcan_ports hfdcan_port;        //user port
+            Fifo_num_type fifo_num;         /*使うfifo基本fifo0かfifo1*/
             can_frame_type hfdcan_frame;         //can frame
             uint16_t TxCycle;               // ms : send cycle
-            uint16_t RxTimeOutCycle;        // ms : timeout
+            uint16_t RxTimeOutCycle;       // 0:Disable | 1 = 0xFFFF enable value ms
             struct{
-                bool Fifo0;                 // 1:Enable | 0:Disable
-                bool Fifo1;                 // 1:Enable | 0:Disable
                 bool Tx_Event;              // 1:Enable | 0:Disable
                 bool Tx_Fifo_Empty;         // 1:Enable | 0:Disable
             }CallBack;
-            uint16_t timeout_counter;       // 0:Disable | 1 = 0xFFFF enable value ms
             bit_rate_type bit_rate;         /*通信速度*/
-            Fifo_num_type fifo_num;         /*使うfifo基本fifo0かfifo1*/
         }fdcan_setting_Handle_TypeDef;
         /**
          * hfdcanxにhfdcanを入れる
@@ -72,19 +69,20 @@ class mFDCAN_template_Class{
             struct{
                 bool Config;
                 bool Start;
-                bool Active_RxCallBack_Fifo0;
-                bool Active_RxCallBack_Fifo1;
+                bool Active_RxCallBack_Fifo;
                 bool Active_TxCallBack;
                 bool Active_TxFifoEmpty_CallBack;
                 bool Active_TimeOut_CallBack;
-                bool Deactive_RxCallBack_Fifo0;
-                bool Deactive_RxCallBack_Fifo1;
+                bool Deactive_RxCallBack_Fifo;
                 bool Deactive_TxCallBack;
                 bool Deactive_TxFifoEmpty_CallBack;
                 bool Deactive_TimeOut_CallBack;
             }Init;//In Init Function
             struct{
-
+                bool User_TxFifo_full_Port;
+                bool TxFifo_full_Port;
+                bool over_Id_value;
+                bool Add_New_TxMessage;
             }Send;//In Send Function
             struct{
 
@@ -100,6 +98,28 @@ class mFDCAN_template_Class{
          */
 
     protected:
+        typedef struct{
+            uint8_t tx_events;
+        }fdcan_stack_event;
+
+        fdcan_stack_event FDCAN_Port1_Stack;
+        fdcan_stack_event FDCAN_Port2_Stack;
+        fdcan_stack_event FDCAN_Port3_Stack;
+
+        typedef struct{
+            FDCAN_HandleTypeDef *hfdcanx;
+            can_frame_type hfdcan_frame;
+        }fdcan_port_setting_Handle_TypeDef;
+
+        fdcan_port_setting_Handle_TypeDef FDCAN_Port1_set;
+        fdcan_port_setting_Handle_TypeDef FDCAN_Port2_set;
+        fdcan_port_setting_Handle_TypeDef FDCAN_Port3_set;
+
+        typedef struct{
+            FDCAN_HandleTypeDef *hfdcanx;
+            uint32_t State;
+        }fdcan_CallBack_Handle_TypeDef;
+
         static constexpr uint32_t dlc_table[16] = {
             FDCAN_DLC_BYTES_0,
             FDCAN_DLC_BYTES_1,
