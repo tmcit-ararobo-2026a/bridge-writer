@@ -138,19 +138,8 @@ protected:
         FDCAN_DLC_BYTES_64,
     };
 
-#define Data_len(len)                                                                             \
-    ((len >= 0) && (len <= 64))                                                                   \
-        ? (len <= 8                                                                               \
-               ? dlc_table[len]                                                                   \
-               : (len <= 12                                                                       \
-                      ? dlc_table[9]                                                              \
-                      : (len <= 16                                                                \
-                             ? dlc_table[10]                                                      \
-                             : (len <= 20                                                         \
-                                    ? dlc_table[11]                                               \
-                                    : (len <= 24 ? dlc_table[12]                                  \
-                                                 : (len <= 32 ? dlc_table[13]                     \
-                                                              : (len <= 48 ? dlc_table[14]        \
-                                                                           : dlc_table[15]))))))) \
-        : dlc_table[0]
+
+#define Data_len(len) ((len >= 0) && (len <= 64)) ? (len <= 8 ? dlc_table[len] : (len <= 12 ? dlc_table[9] : \
+                      (len <= 16 ? dlc_table[10] : (len <= 20 ? dlc_table[11] : (len <= 24 ? dlc_table[12] : \
+                      (len <= 32 ? dlc_table[13] : (len <= 48 ? dlc_table[14] : dlc_table[15]))))))) : dlc_table[0] : dlc_table[0]
 };
