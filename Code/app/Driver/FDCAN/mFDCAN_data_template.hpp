@@ -9,6 +9,7 @@ class mFDCAN_template_Class{
             FDCAN3_Port,
             FDCAN2_Port,
         };
+        int a;
         /**
          * ユーザー指定のport
          * 使い方はhfdcan3をport1と指定して読みやすくする
