@@ -178,11 +178,13 @@ bool mFDCAN_Class::Send(fdcan_TxData_Handle_TypeDef *data)
 {
     FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
     FDCAN_HandleTypeDef *hfdcanx;
+    can_frame_type hfdcan_frame;
 
     switch(data->FDCAN_Port)
     {
         case fdcan_ports::FDCAN1_Port:
             hfdcanx = FDCAN_Port1_set.hfdcanx;
+            hfdcan_frame = FDCAN_Port1_set.hfdcan_frame;
             if(FDCAN_Port1_Stack.tx_events > 15)
             {
                 State.Send.User_TxFifo_full_Port = 1;
@@ -192,6 +194,7 @@ bool mFDCAN_Class::Send(fdcan_TxData_Handle_TypeDef *data)
         
         case fdcan_ports::FDCAN2_Port:
             hfdcanx = FDCAN_Port2_set.hfdcanx;
+            hfdcan_frame = FDCAN_Port2_set.hfdcan_frame;
             if(FDCAN_Port2_Stack.tx_events > 15)
             {
                 State.Send.User_TxFifo_full_Port = 1;
@@ -201,6 +204,7 @@ bool mFDCAN_Class::Send(fdcan_TxData_Handle_TypeDef *data)
         
         case fdcan_ports::FDCAN3_Port:
             hfdcanx = FDCAN_Port3_set.hfdcanx;
+            hfdcan_frame = FDCAN_Port3_set.hfdcan_frame;
             if(FDCAN_Port3_Stack.tx_events > 15)
             {
                 State.Send.User_TxFifo_full_Port = 1;
@@ -215,15 +219,23 @@ bool mFDCAN_Class::Send(fdcan_TxData_Handle_TypeDef *data)
         return 1;
     }
 
-    if(data->Len > 64)
+    if(hfdcan_frame == can_frame_type::classic_can)
     {
-        data->Len = 64;
+        if(data->Len > 8) data->Len = 8;
+        if(data->Id > 0x7FF)
+        {
+            State.Send.over_Id_value = 1;
+            return 0;
+        }
     }
-
-    if(data->Id > 0x1FFFFFFF)
+    else if(hfdcan_frame == can_frame_type::fdcan)
     {
-        State.Send.over_Id_value = 1;
-        return 1;
+        if(data->Len > 64) data->Len = 64;
+        if(data->Id > 0x1FFFFFFF)
+        {
+            State.Send.over_Id_value = 1;
+            return 0;
+        }
     }
 
     FDCAN_TxHeader.Identifier = data->Id;

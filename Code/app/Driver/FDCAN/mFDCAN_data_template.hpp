@@ -16,6 +16,15 @@ public:
      * typedefは下のfdcan_setting_Handle_TypeDefを使う
      */
 
+    enum class can_frame_type : uint8_t{
+        classic_can,
+        fdcan,
+    };
+    /**
+     * classic canと fdcanを選べる
+     * どちらを使うかは.iocファイルになんて設定してあるかを参照
+     */
+
     enum class bit_rate_type : uint8_t {
         _1Mbps_,
         _2Mbps_,
@@ -33,6 +42,7 @@ public:
         FDCAN_HandleTypeDef* hfdcanx;  // hfdcan
         fdcan_ports hfdcan_port;       // user port
         Fifo_num_type fifo_num;        /*使うfifo基本fifo0かfifo1*/
+        can_frame_type hfdcan_frame;   // can frame
         uint16_t RxTimeOutCycle_ms;    // 0:Disable | 1 = 0xFFFF enable value ms
         bit_rate_type bit_rate; /*通信速度*/
     } fdcan_setting_Handle_TypeDef;
@@ -48,7 +58,7 @@ public:
         fdcan_ports FDCAN_Port;
         uint32_t Id;
         uint8_t Len;
-        uint8_t* data_p;/*最小64Byteで作れ*/
+        uint8_t* data_p;/*64Byteで作れ*/
     } fdcan_TxData_Handle_TypeDef;
 
     typedef struct {
@@ -89,6 +99,7 @@ protected:
 
     typedef struct {
         FDCAN_HandleTypeDef* hfdcanx;
+        can_frame_type hfdcan_frame;
     } fdcan_port_setting_Handle_TypeDef;
 
     fdcan_port_setting_Handle_TypeDef FDCAN_Port1_set;
